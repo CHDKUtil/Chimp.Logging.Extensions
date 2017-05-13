@@ -17,3 +17,7 @@ Install-Package Chimp.Logging.Extensions -Pre
 ## License
 
 * MIT License
+
+## Copyright
+
+* Copyright © 2017 Dmitry Shechtman
