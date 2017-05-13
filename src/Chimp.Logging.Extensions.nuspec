@@ -14,7 +14,7 @@
     <tags>chimp logging extensions</tags>
     <releaseNotes>Initial release</releaseNotes>
     <dependencies>
-      <dependency id="Chimp.Logging.Core" version="0.1.1-alpha" />
+      <dependency id="Chimp.Logging.Core" version="0.2.0-alpha" />
       <dependency id="Microsoft.Extensions.Logging.Abstractions" version="1.1.2" />
     </dependencies>
   </metadata>

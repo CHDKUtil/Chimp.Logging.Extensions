@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="chimp.logging.core" Version="0.1.1-alpha" />
+    <PackageReference Include="chimp.logging.core" Version="0.2.0-alpha" />
     <PackageReference Include="microsoft.extensions.logging.abstractions" Version="1.1.2" />
   </ItemGroup>
 
