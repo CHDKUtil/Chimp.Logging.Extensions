@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace Chimp.Logging.Extensions
 {
@@ -21,20 +22,23 @@ namespace Chimp.Logging.Extensions
         /// <inheritdoc/>
         public void Log(LogLevel level, object obj)
         {
-            Logger.Log(GetLogLevel(level), default(EventId), obj, null, null);
+            var logLevel = GetLogLevel(level);
+            Logger.Log(logLevel, default(EventId), obj, null, null);
         }
 
         /// <inheritdoc/>
         public void Log(LogLevel level, string str)
         {
-            Logger.Log(GetLogLevel(level), default(EventId), str, null, null);
+            var logLevel = GetLogLevel(level);
+            Logger.Log(logLevel, default(EventId), str, null, null);
         }
 
         /// <inheritdoc/>
         public void Log(LogLevel level, string format, params object[] args)
         {
-            string str = string.Format(format, args);
-            Logger.Log(GetLogLevel(level), default(EventId), str, null, null);
+            var logLevel = GetLogLevel(level);
+            Func<object[], Exception, string> formatter = (a, e) => string.Format(format, a);
+            Logger.Log(logLevel, default(EventId), args, null, formatter);
         }
 
         /// <inheritdoc/>
